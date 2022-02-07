@@ -42,8 +42,10 @@
 
     if (ipfsid) {
         (async () => {
-            var response = await fetch("https://gateway.pinata.cloud/ipfs/" + ipfsid);
+            var response = await fetch("https://ipfs.io/ipfs/" + ipfsid);
             var data = await response.json();
+
+
             var gallery = '<div style="margin-right: auto; margin-left: auto">';
             gallery += '<div class="image" >';
             gallery += '<a href="https://litemint.com/items/' + data.issuer + '/' + data.code + '" target="_blank">';
@@ -73,19 +75,24 @@
 
             for (var id of ids) {
 
-                var response = await fetch("https://gateway.pinata.cloud/ipfs/" + id);
+                var response = await fetch("https://ipfs.io/ipfs/" + id);
                 var data = await response.json();
                 console.log(data)
 
-                gallery += '<div class="image" id="' + id + '">';
+                gallery += '<div class="image" >';
                 gallery += '<a href="./index.html?id=' + id + '">';
-                gallery += '<img src="' + data.url + '" />';
+                gallery += '<img data-url="' + data.url + '" id="' + id + '" src="./nft.png" />';
                 gallery += '</a><br />';
                 gallery += '<b>' + data.name + '</b>';
                 gallery += '</div>';
             }
 
             document.getElementById('gallery').innerHTML = gallery;
+
+            for (var id of ids) {
+                console.log(document.getElementById(id))
+                document.getElementById(id).src = document.getElementById(id).dataset.url;
+            }
         })()
     }
 
