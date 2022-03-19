@@ -20,7 +20,8 @@
 
 <body>
     <div id="abstract">
-        <h2><img src="https://abs-0.twimg.com/emoji/v2/svg/1f431.svg" width="20px" /><a href="./index.html" style="text-decoration: none; color: inherit">Adopt a Cat</a></h2>
+        <h2><img src="https://abs-0.twimg.com/emoji/v2/svg/1f431.svg" width="20px" /><a href="./index.html"
+                style="text-decoration: none; color: inherit">Adopt a Cat</a></h2>
         <h3>An NFT collection</h3>
         <p>
             This NFT collection features abandoned cats that we are entrusted with by our local Humane Society.
@@ -30,12 +31,60 @@
             kittens.
         </p>
     </div>
-    <div id="gallery" >
+    <div id="gallery">
     </div>
 
+
+    <div id="footer">
+        The funds of the account GCATIDFXDEA26TTXS3GKSNPH6KOSWFBFXU64LMPHRHADNIJDSENOCNFT are given to the Humane
+        Society we are affliated with as foster family.<br />
+        The NFTs sold by another account are second market sale or not sold for charity.
+    </div>
     <img src="https://dol.roflcopter.fr/h/10399G7eZMLpT" />
 </body>
 <script>
+
+    var ids = ["QmXaNKVj3ZmcbTPFnuf7CYDEr4VGRg7epq9LD7bmN9HvXr", "QmNPqqrXzjHmLfjLxftN9xQTJnTgLoKySg2tM1aqcVMkTX", "QmQcdAJaL2jC4CmxT7SJYdFj44kVxNaBBkPDEo65WuHteg"];
+    var forSale = [];
+    (
+        async () => {
+
+            var response = await fetch("https://horizon.stellar.org/accounts/GCATIDFXDEA26TTXS3GKSNPH6KOSWFBFXU64LMPHRHADNIJDSENOCNFT");
+            var account = await response.json();
+
+            if (account && account.balances) {
+                for (var b of account.balances) {
+                    if (parseFloat(b.selling_liabilities) > 0) {
+                        forSale.push({
+                            code: b.asset_code,
+                            issuer: b.asset_issuer
+                        })
+                    }
+                }
+            }
+
+
+            console.log(forSale)
+            var forSaleHash = [];
+            var text = document.createTextNode("FOR SALE");
+            for (var s of forSale) {
+                var response = await fetch("https://horizon.stellar.org/accounts/" + s.issuer);
+                var account = await response.json();
+
+                forSaleHash.push(atob(account.data.ipfshash))
+
+            }
+
+            for (var id of ids) {
+                if (forSaleHash.includes(id)) {
+                    document.getElementById("sale-" + id).innerHTML = "FOR SALE";
+                } else {
+                    document.getElementById("sale-" + id).innerHTML = "";
+                }
+            }
+
+        }
+    )()
 
     const urlParams = new URLSearchParams(window.location.search);
     const ipfsid = urlParams.get('id');
@@ -53,7 +102,7 @@
             gallery += '</a><br />';
             gallery += '</div>';
             gallery += '<div style="float: left; text-align:left; margin: 50px" >';
-            gallery += data.description ;
+            gallery += data.description;
             gallery += '<ul style="list-style: none;">';
             gallery += '<li style="padding-top: 1em;"><img src="https://stellar.expert/img/stellar-expert-blue.svg" width="16px" style="padding-right: 5px"/><a href="https://stellar.expert/explorer/public/asset/' + data.code + '-' + data.issuer + '" target="_blank">';
             gallery += 'View on StellarExpert';
@@ -69,7 +118,7 @@
         })()
 
     } else {
-        var ids = ["QmXaNKVj3ZmcbTPFnuf7CYDEr4VGRg7epq9LD7bmN9HvXr", "QmNPqqrXzjHmLfjLxftN9xQTJnTgLoKySg2tM1aqcVMkTX"];
+
         var gallery = "";
         (async () => {
 
@@ -82,6 +131,7 @@
                 gallery += '<div class="image" >';
                 gallery += '<a href="./index.html?id=' + id + '">';
                 gallery += '<img data-url="' + data.url + '" id="' + id + '" src="./nft.png" />';
+                gallery += '<span id="sale-' + id + '" class="sale" >.</span>';
                 gallery += '</a><br />';
                 gallery += '<b>' + data.name + '</b>';
                 gallery += '</div>';
@@ -95,6 +145,7 @@
             }
         })()
     }
+
 
 </script>
 
