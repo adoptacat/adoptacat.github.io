@@ -9,6 +9,15 @@ ACCOUNTS=[
 ]
 VERSION="2.0.0"
 
+[DOCUMENTATION]
+ORG_NAME="Adopt a Cat"
+ORG_URL="https://adoptacat.github.io/"
+ORG_DESCRIPTION=""
+ORG_PHYSICAL_ADDRESS="France"
+ORG_PHONE_NUMBER=""
+ORG_TWITTER="@vinamo_"
+ORG_GITHUB="vinamogit"
+
 
 [[CURRENCIES]]
 code="CATRND"
