@@ -15,15 +15,15 @@ ORG_URL="https://adoptacat.github.io/"
 ORG_DESCRIPTION=""
 ORG_PHYSICAL_ADDRESS="France"
 ORG_PHONE_NUMBER=""
-ORG_TWITTER="@vinamo_"
-ORG_GITHUB="vinamogit"
+ORG_GITHUB="adoptacat"
 
+[[PRINCIPALS]]
+name="Vincent Amouret"
+email="vincent.amouret@gmail.com"
+twitter="@vinamo_"
 
 [[CURRENCIES]]
 code="CATRND"
 issuer="GC37YMBX25WGFHAD3NORKMZNLE5OGUIHAL3MU4PT2GEAXFOCKK7IS6A3"
 display_decimals=7
 name="Random Cat Ticket"
-desc=""
-conditions=""
-image=""
