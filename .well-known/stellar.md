@@ -5,7 +5,7 @@ permalink: '/.well-known/stellar.toml'
 
 NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
 ACCOUNTS=[
-""
+"GCAT2IRPOLNNEWESS4GPZ7RXNR6CB3V6JDN2YFIQFOBBVQX6JM4BSRND"
 ]
 VERSION="2.0.0"
 
@@ -23,6 +23,6 @@ email="vincent.amouret@gmail.com"
 twitter="@vinamo_"
 
 [[CURRENCIES]]
-code=""
-issuer=""
+code="RNDCOLTCK"
+issuer="GCAT2IRPOLNNEWESS4GPZ7RXNR6CB3V6JDN2YFIQFOBBVQX6JM4BSRND"
 display_decimals=7
