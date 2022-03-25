@@ -23,6 +23,7 @@ email="vincent.amouret@gmail.com"
 twitter="@vinamo_"
 
 [[CURRENCIES]]
+name="Random Color Cat Ticket"
 code="RNDCOLTCK"
 issuer="GCAT2IRPOLNNEWESS4GPZ7RXNR6CB3V6JDN2YFIQFOBBVQX6JM4BSRND"
 display_decimals=7
