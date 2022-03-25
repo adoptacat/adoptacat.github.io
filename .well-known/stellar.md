@@ -26,3 +26,4 @@ twitter="@vinamo_"
 code="RNDCOLTCK"
 issuer="GCAT2IRPOLNNEWESS4GPZ7RXNR6CB3V6JDN2YFIQFOBBVQX6JM4BSRND"
 display_decimals=7
+image=https://ipfs.io/ipfs/QmVMknP2nRNj3cRWwzDcJiqykFs1uUiqiaBbzANFCdheH2
