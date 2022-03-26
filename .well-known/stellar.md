@@ -3,7 +3,7 @@ layout: raw
 permalink: '/.well-known/stellar.toml'
 ---
 [DOCUMENTATION]
-ORG_URL='https://adoptacat.github.io'
+ORG_URL=\'https://adoptacat.github.io\'
 
 [[CURRENCIES]]
 code='RNDCOLTCK'
