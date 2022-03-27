@@ -2,7 +2,7 @@
 layout: raw
 permalink: '/.well-known/RNDCOLTCK.toml'
 ---
-[[CURRENCIES]]
+
 code=\'RNDCOLTCK\'
 issuer=\'GCAT2IRPOLNNEWESS4GPZ7RXNR6CB3V6JDN2YFIQFOBBVQX6JM4BSRND\'
 name=\'Random Color Cat Ticket\'
