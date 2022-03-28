@@ -18,3 +18,17 @@ issuer=\'GDVDN2KKMI5MH5LCFCC747K5UUBPZNH6IHVBTNXGXLURALPFEIGSD6XK\'
 name=\'Emorie in colors\'
 display_decimals=7
 image=\'https://ipfs.io/ipfs/QmNR4Jej8FDbVv9A97CUAzZ6BctQCThus7pv3pjeGtYPmS\'
+
+[[CURRENCIES]]
+code=\'CATCOLOR\'
+issuer=\'GAT3UYJJ62KXI5O6DE2HVDWSTFFABDU4XKSJJEPZPFIGVPLVI2MBR4A6\'
+name=\'Emorie in colors\'
+display_decimals=7
+image=\'https://ipfs.io/ipfs/QmRZ2E685pMgFkZq9bUGvPeECkAzjEJTiC8yUVBnHjkRdo\'
+
+[[CURRENCIES]]
+code=\'CATCOLOR\'
+issuer=\'GDLK2DQQA4WYERGZ6HNNIUKRTC3WGACPQOXPHZWERC522DV6MDTDNLNF\'
+name=\'Emorie in colors\'
+display_decimals=7
+image=\'https://ipfs.io/ipfs/QmaDzrPgpdxE4Ts2r2jmJmP1mfF7gTr521avqtEW6WpeVM\'
