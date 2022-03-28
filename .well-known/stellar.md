@@ -33,4 +33,3 @@ name=\'Emorie in colors\'
 display_decimals=7
 image=\'https://ipfs.io/ipfs/QmaDzrPgpdxE4Ts2r2jmJmP1mfF7gTr521avqtEW6WpeVM\'
 
-
