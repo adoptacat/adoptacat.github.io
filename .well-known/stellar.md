@@ -25,3 +25,10 @@ issuer=\'GABJXCGSKKVMR6XTNKWAINLNQMIJM6Y5C7ZMNB2QH5BWHWG32QA2PYKV\'
 name=\'Emorie in colors\'
 display_decimals=7
 image=\'https://ipfs.io/ipfs/Qmd9xMYWtP6A4uLhVJWwx4fpMqrepK5ekkLz3ywCCD8djM\'
+
+[[CURRENCIES]]
+code=\'CATCOLOR\'
+issuer=\'GDER2GEIKCDG44N7MBZE2XM6KQB2433KP2TV4GWJYRCRNDMCV77O6UBR\'
+name=\'Emorie in colors\'
+display_decimals=7
+image=\'https://ipfs.io/ipfs/QmYD1ALKhPuRVEZrG6qTaFF69La7z6KA9pQCUYcrUqRoRP\'
