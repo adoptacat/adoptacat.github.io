@@ -126,6 +126,7 @@
         var gallery = "";
         (async () => {
 
+            gallery += `<h2 class="title">Original kitten NFTs</h2>`;
             for (var id of ids) {
 
                 var response = await fetch("https://ipfs.io/ipfs/" + id);
@@ -150,6 +151,9 @@
 
             var toml = await StellarSdk.StellarTomlResolver.resolve("adoptacat.github.io");
             console.log(toml.CURRENCIES)
+
+            gallery += `<h2 class="title">Randomly generated NFTs</h2>`;
+            gallery += `<div style="clear:both; text-align:left;">Generate one for yourself while buying <a target="_blank" href="https://litemint.com/items/GCAT2IRPOLNNEWESS4GPZ7RXNR6CB3V6JDN2YFIQFOBBVQX6JM4BSRND/RNDCOLTCK">RNDCOLTCK</a> on Litemint</div>`;
 
 
             for (var i=1; i < toml.CURRENCIES.length; i++) {

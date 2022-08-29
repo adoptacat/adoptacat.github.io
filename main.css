@@ -30,6 +30,10 @@ body {
     writing-mode: vertical-lr;
 }
 
+.title {
+    clear: both;
+}
+
 .image img {
     max-width: 200px;
     /* max-height: 200px; */
