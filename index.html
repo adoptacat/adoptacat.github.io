@@ -12,6 +12,7 @@
     <meta name="twitter:title" content="Adopt a Cat, an NFT collection" />
     <meta name="twitter:image" content="https://adoptacat.github.io/preview.png" />
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.2.0/stellar-sdk.js"></script>
     <style>
 
     </style>
@@ -33,8 +34,6 @@
     </div>
     <div id="gallery">
     </div>
-
-
     <div id="footer">
         The funds of the account GCATIDFXDEA26TTXS3GKSNPH6KOSWFBFXU64LMPHRHADNIJDSENOCNFT are given to the Humane
         Society we are affliated with as foster family.<br />
@@ -88,10 +87,15 @@
 
     const urlParams = new URLSearchParams(window.location.search);
     const ipfsid = urlParams.get('id');
+    const server = new StellarSdk.Server("https://horizon.stellar.org");
 
     if (ipfsid) {
         (async () => {
-            var response = await fetch("https://ipfs.io/ipfs/" + ipfsid);
+
+            var account = await server.loadAccount(ipfsid);
+            console.log(account.data_attr)
+            var ipfshash = atob(account.data_attr["ipfshash"]);
+            var response = await fetch("https://ipfs.io/ipfs/" + ipfshash);
             var data = await response.json();
 
 
@@ -129,7 +133,7 @@
                 console.log(data)
 
                 gallery += '<div class="image" >';
-                gallery += '<a href="./index.html?id=' + id + '">';
+                gallery += '<a href="./index.html?id=' + data.issuer + '">';
                 gallery += '<img data-url="' + data.url + '" id="' + id + '" src="./nft.png" />';
                 gallery += '<span id="sale-' + id + '" class="sale" >.</span>';
                 gallery += '</a><br />';
@@ -143,8 +147,38 @@
                 console.log(document.getElementById(id))
                 document.getElementById(id).src = document.getElementById(id).dataset.url;
             }
+
+            var toml = await StellarSdk.StellarTomlResolver.resolve("adoptacat.github.io");
+            console.log(toml.CURRENCIES)
+
+
+            for (var i=1; i < toml.CURRENCIES.length; i++) {
+
+                var nft = toml.CURRENCIES[i];
+                var tmp = nft.image.split('/');
+                var id = tmp[tmp.length-1];
+                ids.push(id);
+
+                gallery += '<div class="image" >';
+                gallery += '<a href="./index.html?id=' + nft.issuer + '">';
+                gallery += '<img data-url="' + nft.image + '" id="' + id + '" src="./nft.png" />';
+                gallery += '<span id="sale-' + id + '" class="sale" >.</span>';
+                gallery += '</a><br />';
+                gallery += '<b>' + nft.name + '</b>';
+                gallery += '</div>';
+            }
+
+
+            document.getElementById('gallery').innerHTML = gallery;
+            for (var id of ids) {
+                console.log(document.getElementById(id))
+                document.getElementById(id).src = document.getElementById(id).dataset.url;
+            }
         })()
+
     }
+
+
 
 
 </script>

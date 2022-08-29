@@ -32,8 +32,8 @@ body {
 
 .image img {
     max-width: 200px;
-    max-height: 200px;
-    /* min-width: 200px; */
+    /* max-height: 200px; */
+    min-width: 200px;
     min-height: 200px;
 
     display: inline;
@@ -71,6 +71,7 @@ li a {
 
 #footer {
     display: block;
+    clear:both;
     /* position: absolute;
     bottom: 10em; */
     width: 60%;
