@@ -48,3 +48,12 @@ display_decimals=7
 image=\'https://ipfs.io/ipfs/QmYr9uE64Vp8pbt55YRPbWvukHnpk6AiPaeqooeMCKjdCE\'
 anchor_asset_type=\'nft\'
 
+[[CURRENCIES]]
+code=\'CATCOLOR\'
+issuer=\'GC4DZVFWNQWYZ4QJRGEDLKHR2E4LGP7C53RBYXLDKN3HHPE4PKKIY7EA\'
+name=\'Emorie in colors\'
+description=\'Randomly generated colorful picture of Emorie.\'
+display_decimals=7
+image=\'https://ipfs.io/ipfs/QmbpFP5QxLD1E4y4X45U6B19MfDzYwFJp1mfhoKfbBiorn\'
+anchor_asset_type=\'nft\'
+
